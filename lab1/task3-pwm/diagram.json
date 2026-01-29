@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Student",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 124.2, "left": -67.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -42,
+      "left": 32.6,
+      "attrs": { "color": "red", "label": "PWM LED" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 23.45,
+      "left": 56.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic1",
+      "top": -38.05,
+      "left": 278.4,
+      "attrs": { "bufferSize": "1000000" }
+    }
+  ],
+  "connections": [
+    [ "led1:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "uno:3", "r1:2", "green", [ "v-38.4", "h-5.6", "v-65.7" ] ],
+    [ "r1:1", "led1:A", "green", [ "v0" ] ],
+    [ "logic1:D0", "uno:3", "blue", [ "h-38.4", "v240", "h-115.2" ] ],
+    [ "logic1:GND", "uno:GND.2", "black", [ "h-28.8", "v240", "h-211.2" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,7 @@
+.pio
+.vscode/.browserslist
+.vscode/*.json
+!.vscode/extensions.json
+**.bin
+**.elf
+**/output

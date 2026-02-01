@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "author": "Alexsik76",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -121.6,
+      "left": 327.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 268.9,
+      "left": 44.7,
+      "rotate": 270,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 159.6,
+      "left": 282.2,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 217.2,
+      "left": 282.2,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 274.8,
+      "left": 282.2,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 196.25,
+      "left": 325,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 253.85,
+      "left": 325,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 311.45,
+      "left": 325,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.1", "ldr1:GND", "black", [ "v-28.2", "h393.3", "v-76.4" ] ],
+    [ "uno:5V", "ldr1:VCC", "red", [ "v-143.5", "h358.4", "v-153.6" ] ],
+    [ "uno:A0", "ldr1:AO", "blue", [ "v-124.3", "h320", "v-143.3" ] ],
+    [ "uno:9", "r1:1", "green", [ "v-10", "h100" ] ],
+    [ "r1:2", "led1:A", "green", [ "h0" ] ],
+    [ "led1:C", "uno:GND.3", "black", [ "v9.6", "h-118.2" ] ],
+    [ "uno:10", "r2:1", "green", [ "v-10", "h259.3", "v260.2" ] ],
+    [ "r2:2", "led2:A", "green", [ "h0" ] ],
+    [ "led2:C", "uno:GND.3", "black", [ "v10", "h-20" ] ],
+    [ "uno:11", "r3:1", "green", [ "v-10", "h297.6", "v317.8" ] ],
+    [ "r3:2", "led3:A", "green", [ "h0" ] ],
+    [ "led3:C", "uno:GND.3", "black", [ "v10", "h-20" ] ],
+    [ "uno:2", "btn1:1.r", "purple", [ "v87", "h-169.3" ] ],
+    [ "uno:GND.2", "btn1:2.r", "black", [ "v58.1", "h-83.3" ] ]
+  ],
+  "dependencies": {}
+}

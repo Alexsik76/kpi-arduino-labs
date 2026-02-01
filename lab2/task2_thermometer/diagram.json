@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Oleksandr Sikorskyi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": 204.2,
+      "left": 258.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 273.05,
+      "left": 171.4,
+      "rotate": 180,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.1", "ntc1:GND", "black", [ "v40", "h287.7", "v181.4" ] ],
+    [ "uno:A0", "ntc1:OUT", "green", [ "v10.1", "h204.8", "v48.1" ] ],
+    [ "ntc1:OUT", "r1:1", "green", [ "h19.2", "v38.3", "h-182.4" ] ],
+    [ "r1:2", "uno:5V", "red", [ "v-50", "h-60" ] ],
+    [ "ntc1:VCC", "uno:5V", "red", [ "h9.6", "v76.8", "h-243.2" ] ]
+  ],
+  "dependencies": {}
+}
